@@ -1,0 +1,160 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  background-color: #edf4fc;
+}
+
+.container {
+  max-width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.expense-item {
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.expense-item.negative {
+  border-right: 4px solid #dc3545;
+}
+
+.expense-item.positive {
+  border-right: 4px solid #28a745;
+}
+
+.expense-item.negative .amount {
+  color: #dc3545;
+}
+
+.expense-item.positive .amount {
+  color: #28a745;
+}
+
+.expense-form {
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.expense-form h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.expense-form input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.expense-form button {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(145, 16, 215);
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.balance-container {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(145, 16, 215);
+  display: flex;
+  justify-content: space-around;
+}
+
+.currency-item {
+  padding: 10px;
+  background-color: rgb(192, 99, 242);
+  border-radius: 5px;
+  color: white;
+  box-sizing: border-box;
+  width: 30%;
+}
+
+.currency-item .amount {
+  text-align: center;
+}
+
+.currency-item .title {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.amount.green {
+  color: #00ec4b;
+}
+
+.amount.red {
+  color: red;
+}
+
+.expense-item {
+  position: relative;
+}
+
+.btn-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #ffffff92;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  border-radius: 5px;
+}
+
+.expense-item:hover .btn-container {
+  opacity: 1;
+}
+.delete-btn{
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+}
+.edit-btn{
+  background-color:#00ec4b;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.search{
+  margin-top: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
