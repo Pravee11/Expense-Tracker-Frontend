@@ -69,26 +69,14 @@ import History from "./History";
 import { useState } from "react";
 import { useEffect } from "react";
 import { toast } from "react-toastify"
-const INITIAL_EXPENSE = [
-    {
-        id: 1,
-        title: "salary",
-        amount: 1000
-    },
-    {
-        id: 2,
-        title: "Rent",
-        amount: -200
-    }
-
-]
+const INITIAL_EXPENSE = []
 const Container = () => {
 
     const [transactions, setTransactions] = useState(INITIAL_EXPENSE)
     const [editItem, seteditItem] = useState(null)
     
     const addExpense = async (title, amount) => {
-        await fetch("http://localhost:3000/addExpense", {
+        await fetch("https://expense-tracker-backend-f805.onrender.com/addExpense", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ title, amount })
@@ -96,19 +84,19 @@ const Container = () => {
         getAllExpense()
         toast.success("transaction added successfully")
     }
-    
+
     useEffect(() => {
         getAllExpense();
     }, []);
 
     const getAllExpense = async () => {
-        const response = await fetch("http://localhost:3000/getExpenses");
+        const response = await fetch("https://expense-tracker-backend-f805.onrender.com/getExpenses");
         const data = await response.json();
         setTransactions(data);
     };
 
     const deleteExpense = async (id) => {
-        await fetch("http://localhost:3000/deleteExpense", {
+        await fetch("https://expense-tracker-backend-f805.onrender.com/deleteExpense", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id })
@@ -118,7 +106,7 @@ const Container = () => {
     }
 
     const updateExpense = async (id, title, amount) => {
-        let result = await fetch("http://localhost:3000/updateExpense", {
+        let result = await fetch("https://expense-tracker-backend-f805.onrender.com/updateExpense", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id, title, amount })

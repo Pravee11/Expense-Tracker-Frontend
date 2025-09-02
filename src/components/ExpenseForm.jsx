@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const ExpenseForm = (props) => {
-    const {addExpense,editItem,setEditItem,updateExpense}=props
+    const {addExpense,editItem,seteditItem,updateExpense}=props
     const [title,setTitle]=useState("")
     const [amount,setAmount]=useState("")
 
@@ -21,8 +21,8 @@ const ExpenseForm = (props) => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         if(editItem){
-            updateExpense(editItem.id,title,amount)
-            setEditItem(null)
+            updateExpense(editItem._id,title,amount)
+            seteditItem(null)
         }else{
             addExpense(title,amount)
             setTitle("")
