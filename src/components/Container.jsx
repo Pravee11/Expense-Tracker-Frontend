@@ -112,6 +112,7 @@ const Container = () => {
             body: JSON.stringify({ id, title, amount })
         })
         getAllExpense();
+        toast.success("transaction editeded successfully")
     }
 
     const editExpense = (item) => {
